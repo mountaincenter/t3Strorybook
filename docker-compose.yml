@@ -1,0 +1,16 @@
+version: "3.7"
+services:
+  app:
+    build:
+      args:
+        - NODE_VER=20.12.2
+      context: .
+      dockerfile: Dockerfile
+    tty: true
+    volumes:
+      - .:/home/node/app
+      # - node_modules:/home/node/app_node_modules
+    ports:
+      - 3000:3000
+volumes:
+  node_modules:
