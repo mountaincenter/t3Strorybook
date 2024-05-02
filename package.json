@@ -5,22 +5,25 @@
   "type": "module",
   "scripts": {
     "build": "next build",
-    "db:push": "prisma db push",
+    "db:push": "dotenv -e .env.development.local -- prisma db push",
+    "migrate": "dotenv -e .env.development.local -- npx prisma migrate deploy",
     "db:studio": "prisma studio",
     "dev": "next dev",
     "postinstall": "prisma generate",
     "lint": "next lint",
-    "start": "next start"
+    "start": "next start",
+    "ts": "npx dotenv -e .env.development.local -- node --loader ts-node/esm"
   },
   "dependencies": {
     "@auth/prisma-adapter": "^1.4.0",
-    "@prisma/client": "^5.10.2",
+    "@prisma/client": "^5.13.0",
     "@t3-oss/env-nextjs": "^0.10.1",
     "@tanstack/react-query": "^5.25.0",
     "@trpc/client": "next",
     "@trpc/react-query": "next",
     "@trpc/server": "next",
     "@vercel/postgres": "^0.8.0",
+    "dotenv-cli": "^7.4.1",
     "next": "^14.2.1",
     "next-auth": "^4.24.6",
     "react": "18.2.0",
@@ -32,7 +35,7 @@
   },
   "devDependencies": {
     "@types/eslint": "^8.56.2",
-    "@types/node": "^20.11.20",
+    "@types/node": "^20.12.8",
     "@types/react": "^18.2.57",
     "@types/react-dom": "^18.2.19",
     "@typescript-eslint/eslint-plugin": "^7.1.1",
@@ -44,6 +47,7 @@
     "prettier-plugin-tailwindcss": "^0.5.11",
     "prisma": "^5.10.2",
     "tailwindcss": "^3.4.1",
+    "ts-node": "^10.9.2",
     "typescript": "^5.4.2"
   },
   "ct3aMetadata": {
