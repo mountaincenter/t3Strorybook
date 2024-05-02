@@ -1,7 +1,7 @@
 {
   "name": "procject-dev",
   "dockerComposeFile": ["../docker-compose.yml"],
-  "service": "react",
+  "service": "app",
   "workspaceFolder": "/home/node/app",
   "customizations": {
     "vscode": {

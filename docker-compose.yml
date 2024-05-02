@@ -9,7 +9,7 @@ services:
     tty: true
     volumes:
       - .:/home/node/app
-      # - node_modules:/home/node/app_node_modules
+      - node_modules:/home/node/app_node_modules
     ports:
       - 3000:3000
 volumes:
